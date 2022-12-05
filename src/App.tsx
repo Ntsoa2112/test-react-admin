@@ -1,6 +1,7 @@
-import { Admin, Resource, ListGuesser } from "react-admin";
+import { Admin, Resource, ListGuesser, EditGuesser  } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import { UserList } from "./users";
+import { PostList, PostEdit, PostCreate } from "./posts";
 
 /*
 The <App> component renders an <Admin> component, which is the root component of a react-admin application. 
@@ -17,8 +18,8 @@ The list={ListGuesser} tells react-admin to use the <ListGuesser> component to d
 */
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    
-    <Resource name="users" list={UserList} />
+    <Resource name="users" list={UserList} recordRepresentation="name" />
+    <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} recordRepresentation="title"/>
   </Admin>
 );
 
