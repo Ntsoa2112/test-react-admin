@@ -1,8 +1,11 @@
 import { useRecordContext } from "react-admin";
 import { Link } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
+interface Props {
+  source: string
+}
 
-const MyUrlField = ({ source }) => {
+const MyUrlField = ({ source }: Props) => {
   const record = useRecordContext();
   return record ? (
     <Link href={record[source]} sx={{ textDecoration: "none" }}>

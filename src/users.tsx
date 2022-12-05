@@ -3,7 +3,7 @@ import { List, SimpleList, Datagrid, TextField, EmailField, UrlField} from "reac
 import MyUrlField from './MyUrlField';
 
 export const UserList = () => {
-  const isSmall = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isSmall = useMediaQuery((theme : any) => theme.breakpoints.down("sm"));
   return (
     <List>
       {isSmall ? (
